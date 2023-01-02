@@ -1,17 +1,20 @@
 import { StyleSheet, View, TouchableOpacity, Text, Image } from 'react-native';
 import { COLORS } from '../constants';
-import { useSelector, useDispatch } from "react-redux";
 
 function itemTipo({ item }) {
     return (
         <View style={styles.listItem}>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button}
+                onPress={() => console.log(item.id)} >
                 <Image style={styles.imagen} source={item.imagen} />
                 <Text style={styles.text}>{item.titulo}</Text>
             </TouchableOpacity>
         </View>
     );
 }
+
+//                onPress={() => navigation.navigate("Tareas")} >
+
 
 export default itemTipo;
 
@@ -27,13 +30,14 @@ const styles = StyleSheet.create({
         flex: 1,
         borderRadius: 10,
         backgroundColor: COLORS.principal,
+        justifyContent: "center"
     },
     button: {
         height: 80,
         width: 200,
         paddingLeft: 16,
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
     },
     imagen: {
         paddingLeft: 16,

@@ -1,14 +1,12 @@
 import { StyleSheet, View, FlatList } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { COLORS } from '../constants';
-import itemTipo from '../components/itemTipo';
-import { selectTipo } from '../store/actions/tipo.actions';
 import { TIPOS } from '../data/Tipos';
+import { selectTipo } from '../store/actions/tipo.actions';
 
-const ListaTareas = ({ navigation }) => {
+const ListaTareas = ({ item, onSelected }) => {
     const dispatch = useDispatch();
     const tipo = TIPOS ;//useSelector(state => state.tipos.selected);
-    console.log(TIPOS);
 
     const handlerSelectedTipo = (itemTipo) => {
         console.log('handlerSelectedTipo:');
@@ -21,7 +19,8 @@ const ListaTareas = ({ navigation }) => {
     const renderGridItem = (itemData) => (
         <TipoGridTitle
             item={itemData.item}
-            onSelected={handlerSelectedTipo} />
+            onSelected={handlerSelectedTipo}
+            onPress={() => onSelected(item)} />
     )
 
     return (
