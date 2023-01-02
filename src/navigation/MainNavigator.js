@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from "@react-navigation/native";
 
 import MainScreen from '../screens/MainScreen';
-import ListaTareas from '../screens/TareasScreen';
+import ListaTipos from '../screens/TiposScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,7 +12,7 @@ const MainNavigator = () => {
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Home">
                 <Stack.Screen name="Home" component={MainScreen} />
-                <Stack.Screen name="Tareas" component={ListaTareas} />
+                <Stack.Screen name="Tipos" component={ListaTipos} />
             </Stack.Navigator>
         </NavigationContainer>
     );

@@ -1,14 +1,34 @@
-import { StyleSheet, View, TouchableOpacity, Text, FlatList, Image } from 'react-native';
+import { StyleSheet, View, FlatList } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
 import { COLORS } from '../constants';
-import { TIPOS } from '../data/Tipos';
 import itemTipo from '../components/itemTipo';
+import { selectTipo } from '../store/actions/tipo.actions';
+import { TIPOS } from '../data/Tipos';
 
 const ListaTareas = ({ navigation }) => {
+    const dispatch = useDispatch();
+    const tipo = TIPOS ;//useSelector(state => state.tipos.selected);
+    console.log(TIPOS);
+
+    const handlerSelectedTipo = (itemTipo) => {
+        console.log('handlerSelectedTipo:');
+        dispatch(selectTipo(itemTipo));
+        navigation.push('Tarea', {
+            name: itemTipo.titulo
+        })
+    }
+
+    const renderGridItem = (itemData) => (
+        <TipoGridTitle
+            item={itemData.item}
+            onSelected={handlerSelectedTipo} />
+    )
+
     return (
         <View style={styles.container}>
             <FlatList
-                data={TIPOS}
-                renderItem={itemTipo}
+                data={tipo}
+                renderItem={renderGridItem}
                 keyExtractor={item => item.id}
                 horizontal={true}
             />

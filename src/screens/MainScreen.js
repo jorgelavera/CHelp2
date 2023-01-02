@@ -6,7 +6,7 @@ const MainScreen = ({ navigation }) => {
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate("Tareas")}
+        onPress={() => navigation.navigate("Tipos")}
       >
         <Text style={styles.text}>LISTA DE TAREAS</Text>
       </TouchableOpacity>
