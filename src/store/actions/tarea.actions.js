@@ -3,10 +3,10 @@ export const FILTERED_TAREA = 'FILTERED_TAREA';
 
 export const selectTarea = (id) => ({
     type: SELECT_TAREA,
-    tareaId: id
+    tareaSelectingId: id
 });
 
 export const filteredTarea = (id) => ({
     type: FILTERED_TAREA,
-    tipoId: id
+    tipoFilteringId: id
 });

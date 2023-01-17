@@ -1,6 +1,6 @@
-export const SELECT_TIPO = 'SELECT_TIPO';
+export const SELECTED_TIPO = 'SELECTED_TIPO';
 
-export const selectTipo = (id) => ({
-    type: SELECT_TIPO,
-    tipoId: id
+export const selectedTipo = (id) => ({
+    type: SELECTED_TIPO,
+    tipoSelectingId: id
 });

@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "CHelp",
-    "slug": "CHelp",
+    "slug": "chelp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
@@ -24,10 +24,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.jlavera.chelp"
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "bbbf0dce-4027-45a5-b490-8669d50d058d"
+      }
+    },
+    "owner": "jlavera"
   }
 }
