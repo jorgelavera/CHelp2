@@ -10,17 +10,12 @@ const initialState = {
 const TareaReducer = (state = initialState, action) => {
     switch (action.type) {
         case SELECT_TAREA:
-            console.log('xxxx1 TareaReducer SELECT_TAREA....')
-            console.log(action.tipoSelectingId)
             return {
                 ...state,
                 selected: state.tipos.find(
                     (tarea) => tarea.tipoId === action.tipoSelectingId)
             };
         case FILTERED_TAREA:
-            console.log('xxxx2 TareaReducer FILTERED_TAREA....')
-//            console.log(state.tareas)
-            console.log(action.tipoFilteringId)
             return {
                 ...state,
                 filteredTarea: state.tareas.filter(

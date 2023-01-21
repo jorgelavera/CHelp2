@@ -20,10 +20,6 @@ const ListaTiposScreen = ({ navigation }) => {
                             onPress={() => {
                                 dispatch(selectedTipo(item.id));
                                 dispatch(filteredTarea(item.id));
-                                console.log('***1');
-                                console.log(selectedTipo(item.id));
-                                console.log('***2');
-                                console.log(item.id);
                                 navigation.navigate("Tareas");
                             }}
                         >

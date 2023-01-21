@@ -9,11 +9,8 @@ const initialState = {
 const TipoReducer = (state = initialState, action) => {
     switch (action.type) {
         case SELECTED_TIPO:
-            console.log('xxxx3 TipoReducer SELECTED_TIPO....')
-            console.log(action.tipoSelectingId)
             const IndexTipo = state.tipos.findIndex(
                 (cat) => cat.id === action.tipoSelectingId);
-            console.log(IndexTipo)
             if (IndexTipo === -1) return state;
             return { ...state, selected: state.tipos[IndexTipo] }
         default:

@@ -3,16 +3,10 @@ import { useEffect } from 'react';
 import { StyleSheet, View, FlatList, TouchableOpacity, Image, Text } from 'react-native';
 import { useSelector, connect } from 'react-redux';
 
-const ListaTareasScreen = () => {
+const ListaTareasScreen = ({ navigation }) => {
     const tareasFiltradas = useSelector((state) => state.tareas.filteredTarea);
 
     useEffect(() => {
-        console.log('eeee1')
-        console.log(tareasFiltradas);
-        //console.log(filteredTarea(tareasFiltradas.tipoFilteringId));
-        //console.log(tipoSelectingId);
-        console.log('eeee2')
-        //dispatch(tareas(tareas.filteredTarea))
     }, []);
 
     return (
@@ -25,8 +19,8 @@ const ListaTareasScreen = () => {
                             style={styles.button}
                             onPress={() => {
                                 console.log('---')
-                                console.log(item)
-                                navigation.navigate("Tareas");
+                                console.log(item.id)
+                                navigation.navigate("Edit");
                             }}
                         >
                             <Image style={styles.imagen} source={item.imagen} />
@@ -37,6 +31,15 @@ const ListaTareasScreen = () => {
                 horizontal={false}
                 keyExtractor={item => item.id}
             />
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => {
+                    console.log('---')
+                    navigation.navigate("Nuevo");
+                }}
+            >
+                <Text style={styles.text}>Nueva Tarea</Text>
+            </TouchableOpacity>
         </View>
     );
 }
@@ -48,6 +51,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: COLORS.claro,
         width: '100%',
+        justifyContent: "flex-start"
     },
     listItem: {
         margin: 16,
