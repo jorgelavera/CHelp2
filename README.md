@@ -13,4 +13,4 @@ CHelp es un pequeño gestor de tareas con alarmas.
 * Persistencia de datos
 	La creación y conexión a la db está, pero para tomar/grabar los datos de ahí tenía que hacer un CRUD y no me dió el tiempo.
 * Configuración de publicación (ícono, splash, y permisos)
-	Ejecutar desde: exp://u.expo.dev/update/4f9b15fe-919d-4836-ba16-71468b6a368d
+	Ejecutar desde: exp://u.expo.dev/update/fa3ef435-ff6d-4eb6-9b44-e935fe755992
