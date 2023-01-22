@@ -29,9 +29,9 @@ export const TAREAS = [
   },
   {
     id: "5",
-    tipoId: "1",
+    tipoId: "4",
     titulo: "Cena",
-    imagen: require('../assets/Limpiar.png'),
+    imagen: require('../assets/cup.png'),
     duracion: 120,
   },
 ];

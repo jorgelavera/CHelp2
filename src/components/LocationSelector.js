@@ -1,7 +1,7 @@
 import * as Location from 'expo-location';
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { COLORS } from "../constants";
+import { COLORS } from "../constants/index.js";
 
 export default function DeviceLocation() {
     const [location, setLocation] = useState(null);

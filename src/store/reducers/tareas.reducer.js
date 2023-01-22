@@ -1,5 +1,5 @@
 import { TAREAS } from '../../data/Tareas';
-import { SELECT_TAREA, FILTERED_TAREA } from './../actions/tarea.actions';
+import { SELECT_TAREA, FILTERED_TAREA, EDIT_TAREA } from './../actions/tarea.actions';
 
 const initialState = {
     tareas: TAREAS,
@@ -21,6 +21,8 @@ const TareaReducer = (state = initialState, action) => {
                 filteredTarea: state.tareas.filter(
                     (tarea) => tarea.tipoId === action.tipoFilteringId)
             };
+        case EDIT_TAREA:
+            return state;
         default:
             return state;
     }
